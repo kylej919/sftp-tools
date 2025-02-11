@@ -1,0 +1,11 @@
+services:
+  sftp-server:
+    container_name: "sftp_server"
+    image: atmoz/sftp:latest
+    ports:
+      - "22:22"
+    volumes:
+      - ./sftp/data:/home/user/data
+      - ./sftp/init.sh:/etc/sftp.d/init.sh:rw
+    command:
+      - user:pass:::data
