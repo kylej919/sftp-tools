@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 
 @ActiveProfiles("test")
-@SpringBootTest(properties = arrayOf("spring.jpa.hibernate.ddl-auto=create"))
+@SpringBootTest
 class ProductDataImportServiceIT {
 
     @Autowired

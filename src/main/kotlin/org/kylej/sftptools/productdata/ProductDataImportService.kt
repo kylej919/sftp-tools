@@ -18,6 +18,7 @@ class ProductDataImportService(
     fun importProductData(): List<ProductData> {
         val sftpConnection = sftpService.getSftpConnection()
         val csvContent = String(sftpConnection.download("/data/refined_ecommerce_product_data.csv"))
+        sftpConnection.close()
         val productDataCsvRecords = parseCsv(csvContent)
         val dbRecords = productDataCsvRecords.map { fromCsvRecord(it) }
         return productDataRepository.saveAll(dbRecords)
