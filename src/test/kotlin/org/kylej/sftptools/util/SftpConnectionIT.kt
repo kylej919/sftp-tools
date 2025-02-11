@@ -3,6 +3,7 @@ package org.kylej.sftptools.util
 import com.jcraft.jsch.ChannelSftp.LsEntry
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.kylej.sftptools.sftp.util.SftpConnection
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest

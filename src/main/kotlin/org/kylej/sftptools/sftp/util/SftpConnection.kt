@@ -1,4 +1,4 @@
-package org.kylej.sftptools.util
+package org.kylej.sftptools.sftp.util
 
 import com.jcraft.jsch.ChannelSftp
 import com.jcraft.jsch.ChannelSftp.LsEntry

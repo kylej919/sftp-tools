@@ -9,3 +9,16 @@ services:
       - ./sftp/init.sh:/etc/sftp.d/init.sh:rw
     command:
       - user:pass:::data
+
+  postgres:
+    container_name: "postgres"
+    image: postgres:latest
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=postgres
+      - POSTGRES_RESTORE_STRATEGY=${POSTGRES_RESTORE_STRATEGY:-always}
+    ports:
+      - "5432:5432"
